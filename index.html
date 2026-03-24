@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Besh Vignesh Reddy Matta Portfolio</title>
   <meta charset="utf-8">
@@ -9,36 +10,61 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
 
   <!-- Bootstrap 4 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css" />
 
   <style>
-    :root{
-      --ink:#111; --paper:#fff; --muted:#6c757d; --border:#eeeeee;
-      --bg-word-size: clamp(56px, 10vw, 96px);   /* big faint word size */
-      --fg-title-size: clamp(22px, 3vw, 32px);   /* foreground title size */
-      --overlay-gap: 18px;                       /* consistent overlap spacing */
+    :root {
+      --ink: #111;
+      --paper: #fff;
+      --muted: #6c757d;
+      --border: #eeeeee;
+      --bg-word-size: clamp(56px, 10vw, 96px);
+      /* big faint word size */
+      --fg-title-size: clamp(22px, 3vw, 32px);
+      /* foreground title size */
+      --overlay-gap: 18px;
+      /* consistent overlap spacing */
     }
 
-    html, body {
+    html,
+    body {
       background: var(--paper);
       color: var(--ink);
       font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
     }
 
-    a { color: var(--ink); }
-    a:hover { opacity: .75; text-decoration: none; }
+    a {
+      color: var(--ink);
+    }
+
+    a:hover {
+      opacity: .75;
+      text-decoration: none;
+    }
 
     /* Offset so anchored sections aren't hidden under fixed navbar */
-    section, .skills-band { scroll-margin-top: 90px; }
+    section,
+    .skills-band {
+      scroll-margin-top: 90px;
+    }
 
     /* Navbar */
-    .navbar { background:#fff !important; }
-    .navbar-brand, .navbar-light .navbar-nav .nav-link { color: var(--ink) !important; }
-    .navbar-light .navbar-nav .active>.nav-link { font-weight:600; }
+    .navbar {
+      background: #fff !important;
+    }
+
+    .navbar-brand,
+    .navbar-light .navbar-nav .nav-link {
+      color: var(--ink) !important;
+    }
+
+    .navbar-light .navbar-nav .active>.nav-link {
+      font-weight: 600;
+    }
 
     /* Reusable centered heading (same for all sections) */
-    .section-header{
+    .section-header {
       position: relative;
       display: grid;
       place-items: center;
@@ -46,149 +72,412 @@
       margin-bottom: 18px;
       text-align: center;
     }
-    .section-header .bg-word{
+
+    .section-header .bg-word {
       grid-area: 1 / 1;
       text-transform: uppercase;
       letter-spacing: .2em;
-      color: #e9ecef;       /* faint “shadow” word */
+      color: #e9ecef;
+      /* faint “shadow” word */
       font-weight: 800;
       font-size: var(--bg-word-size);
       line-height: 1;
       user-select: none;
       pointer-events: none;
     }
-    .section-header .fg-title{
+
+    .section-header .fg-title {
       grid-area: 1 / 1;
       position: relative;
-      top: calc(var(--overlay-gap) * -1);     /* consistent overlap vs background word */
+      top: calc(var(--overlay-gap) * -1);
+      /* consistent overlap vs background word */
       margin: 0;
       font-weight: 700;
       font-size: var(--fg-title-size);
     }
 
     /* Hero */
-    .hero { padding: 96px 0 48px; background: #fff; }
-    .hero .subheading { font-size: 18px; color: var(--muted); }
-    .hero h1 { font-size: 44px; line-height: 1.2; margin-bottom: 8px; }
-    .hero h1 span { border-bottom: 3px solid var(--ink); }
-    .hero h2 { font-size: 22px; color: var(--muted); margin: 8px 0 0; }
-    .hero h3 { font-size: 18px; color: var(--muted); margin: 4px 0 16px; }
-    .btn-primary { background: var(--ink) !important; border-color: var(--ink) !important; }
-    .btn-outline-dark { border-color: var(--ink); color: var(--ink); }
-    .btn-outline-dark:hover { background: var(--ink); color:#fff; }
+    .hero {
+      padding: 96px 0 48px;
+      background: #fff;
+    }
+
+    .hero .subheading {
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 span {
+      border-bottom: 3px solid var(--ink);
+    }
+
+    .hero h2 {
+      font-size: 22px;
+      color: var(--muted);
+      margin: 8px 0 0;
+    }
+
+    .hero h3 {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 4px 0 16px;
+    }
+
+    .btn-primary {
+      background: var(--ink) !important;
+      border-color: var(--ink) !important;
+    }
+
+    .btn-outline-dark {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .btn-outline-dark:hover {
+      background: var(--ink);
+      color: #fff;
+    }
 
     /* Sections */
-    .ftco-section { padding: 72px 0; background: #fff; position: relative; }
+    .ftco-section {
+      padding: 72px 0;
+      background: #fff;
+      position: relative;
+    }
 
     /* About */
-    .img-about .overlay { background: transparent; }
-    .about-img img { border-radius: 8px; }
-    .b-shadow-a { box-shadow: 0 10px 25px rgba(0,0,0,.06); }
-    .about-info li { margin-bottom: 6px; }
+    .img-about .overlay {
+      background: transparent;
+    }
+
+    .about-img img {
+      border-radius: 8px;
+    }
+
+    .b-shadow-a {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .06);
+    }
+
+    .about-info li {
+      margin-bottom: 6px;
+    }
 
     /* ===== Full-width Skills Section with background ===== */
     .skills-band {
       position: relative;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      background:#fff;
+      background: #fff;
       padding: 48px 0 56px;
     }
+
     .skills-band::before {
-      content:"";
-      position:absolute; inset:0;
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
-        linear-gradient(to bottom, rgba(255,255,255,.85), rgba(255,255,255,.92)),
+        linear-gradient(to bottom, rgba(255, 255, 255, .85), rgba(255, 255, 255, .92)),
         url('images/skills-bg.jpg') center/cover no-repeat;
       opacity: 1;
-      pointer-events:none;
+      pointer-events: none;
     }
-    .skills-band > .container,
-    .skills-band > .container-fluid { position: relative; z-index: 1; }
 
-    .skills-wrap { overflow:hidden; position:relative; }
-    .skills-track {
-      display:flex;
-      width:max-content;
-      gap:16px;
-      padding: 8px 8px 12px;
-      animation: scroll-left 20s linear infinite; /* higher = slower */
+    .skills-band>.container,
+    .skills-band>.container-fluid {
+      position: relative;
+      z-index: 1;
     }
-    .skills-wrap:hover .skills-track { animation-play-state: paused; }
+
+    .skills-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skills-track {
+      display: flex;
+      width: max-content;
+      gap: 16px;
+      padding: 8px 8px 12px;
+      animation: scroll-left 20s linear infinite;
+      /* higher = slower */
+    }
+
+    .skills-wrap:hover .skills-track {
+      animation-play-state: paused;
+    }
 
     .skill-chip {
-      flex:0 0 auto;
-      display:inline-flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      gap:8px;
-      width:190px;
-      height:220px;           /* vertical size of skills blocks */
-      border:1px solid var(--border);
-      border-radius:16px;
-      background:#fff;
-      font-weight:700;
-      letter-spacing:.2px;
-      padding:16px;
-      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-      white-space:normal;
-      line-height:1.25;
+      flex: 0 0 auto;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 8px;
+      width: 190px;
+      height: 220px;
+      /* vertical size of skills blocks */
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      font-weight: 700;
+      letter-spacing: .2px;
+      padding: 16px;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      white-space: normal;
+      line-height: 1.25;
     }
-    .skill-chip small{ display:block; font-weight:500; color:var(--muted); font-size:13px; }
-    .skill-chip:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.08); border-color:#111; }
+
+    .skill-chip small {
+      display: block;
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .skill-chip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+      border-color: #111;
+    }
 
     @keyframes scroll-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); } /* duplicate items for seamless loop */
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+
+      /* duplicate items for seamless loop */
     }
+
     @media (prefers-reduced-motion: reduce) {
-      .skills-track, .projects-track { animation:none; }
+
+      .skills-track,
+      .projects-track {
+        animation: none;
+      }
     }
 
     /* Resume cards spacing + hover */
     .resume-wrap {
-      background:#fff; border:1px solid var(--border); border-radius:12px;
-      padding:24px; height:100%; margin-bottom:18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      height: 100%;
+      margin-bottom: 18px;
       transition: box-shadow .2s ease, transform .15s ease, border-color .2s ease;
     }
-    .resume-wrap .date{ font-weight:600; color:var(--muted); }
-    .resume-wrap:hover{ transform:translateY(-3px); border-color:#111; box-shadow:0 12px 28px rgba(0,0,0,.08); }
-    .underline{ width:80px; height:3px; background:#111; border-radius:3px; margin-left:15px; }
+
+    .resume-wrap .date {
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .resume-wrap:hover {
+      transform: translateY(-3px);
+      border-color: #111;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+    }
+
+    .underline {
+      width: 80px;
+      height: 3px;
+      background: #111;
+      border-radius: 3px;
+      margin-left: 15px;
+    }
 
     /* Projects continuous marquee */
-    .projects-wrap{ border:1px solid var(--border); border-radius:16px; overflow:hidden; padding:14px 0; background:#fff; }
-    .projects-track{
-      display:flex; align-items:stretch; width:max-content; gap:20px; padding:6px 10px;
+    .projects-wrap {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      padding: 14px 0;
+      background: #fff;
+    }
+
+    .projects-track {
+      display: flex;
+      align-items: stretch;
+      width: max-content;
+      gap: 20px;
+      padding: 6px 10px;
       animation: projects-scroll 20s linear infinite;
     }
-    .projects-wrap:hover .projects-track{ animation-play-state: paused; }
-    @keyframes projects-scroll{ 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
 
-    .project-card{ flex:0 0 auto; width:320px; border:1px solid var(--border); border-radius:14px; background:#fff; overflow:hidden; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-    .project-card:hover{ transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.08); border-color:#111; }
-    .project-img{ display:block; width:100%; height:180px; background-size:cover; background-position:center; }
-    .project-body{ padding:12px 12px 14px; }
-    .project-body .heading{ font-size:18px; margin-bottom:6px; line-height:1.2; }
-    .project-body p{ margin:0; color: var(--muted); font-size:14px; }
+    .projects-wrap:hover .projects-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes projects-scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .project-card {
+      flex: 0 0 auto;
+      width: 320px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .08);
+      border-color: #111;
+    }
+
+    .project-img {
+      display: block;
+      width: 100%;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .project-body {
+      padding: 12px 12px 14px;
+    }
+
+    .project-body .heading {
+      font-size: 18px;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .project-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
     /* Contact */
-    .contact-info .box{ border:1px solid var(--border); border-radius:12px; padding:24px; width:100%; background:#fff; }
-    .contact-info h3{ font-size:18px; margin-top:8px; }
+    .contact-info .box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      width: 100%;
+      background: #fff;
+    }
+
+    .contact-info h3 {
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    .contact-form-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff, #fafafa);
+      padding: 28px;
+      margin: 12px 0 28px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, .05);
+    }
+
+    .contact-form-card h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .contact-form-card p {
+      color: var(--muted);
+    }
+
+    .contact-form .form-group {
+      margin-bottom: 16px;
+    }
+
+    .contact-form label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      margin-bottom: 8px;
+    }
+
+    .contact-form .form-control {
+      height: 52px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: none;
+    }
+
+    .contact-form textarea.form-control {
+      min-height: 150px;
+      height: auto;
+      resize: vertical;
+    }
+
+    .contact-form .form-control:focus {
+      border-color: var(--ink);
+      box-shadow: 0 0 0 0.2rem rgba(17, 17, 17, .08);
+    }
+
+    .contact-form .btn {
+      min-width: 180px;
+    }
+
+    .contact-form-note {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 14px;
+      margin-bottom: 0;
+    }
+
+    .form-status {
+      display: none;
+      border: 1px solid #cfe8d5;
+      border-radius: 12px;
+      background: #f4fbf5;
+      color: #155724;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+    }
+
+    .form-status.is-visible {
+      display: block;
+    }
 
     /* Footer */
-    .ftco-footer{ background:#fff; border-top:1px solid var(--border); padding:32px 0; color:var(--muted); }
-    .ftco-footer a{ color:var(--ink); }
+    .ftco-footer {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      color: var(--muted);
+    }
+
+    .ftco-footer a {
+      color: var(--ink);
+    }
   </style>
 </head>
+
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="80">
 
   <!-- NAV -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top site-navbar-target" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="#home-section">Besh Vignesh Reddy Matta</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span>Menu</span>
       </button>
 
@@ -213,8 +502,8 @@
         <div class="col-md-7">
           <span class="subheading">Hello!</span>
           <h1 class="mb-2">I'm <span>Besh Vignesh Reddy Matta</span></h1>
-          <h2>Graduate Student at UTDallas</h2>
-          <h3>Masters In Business Analytics and AI</h3>
+          <h2>Graduate at University of Texas at Dallas</h2>
+          <h3>MS in Business Analytics and AI | Data Engineering, Data Analytics, BI &amp; AI Automation</h3>
           <div class="mt-3">
             <a href="https://www.linkedin.com/in/m-besh-vignesh-reddy/" class="btn btn-primary btn-lg mr-2">LinkedIn</a>
             <a href="https://github.com/MBeshVignesh" class="btn btn-outline-dark btn-lg">GitHub</a>
@@ -264,23 +553,28 @@
 
         <!-- RIGHT: about text + LinkedIn under description -->
         <div class="col-md-6 col-lg-7 pl-lg-5 pb-4">
-          <p class="mb-3">a dedicated professional with a strong interest in Data Engineering, Data Science, Machine Learning and AI.
-            With a background in both software development and data-driven technologies, I am passionate about solving
-            real-world problems through innovative and impactful solutions. My goal is to bridge the technical and business
-            worlds by turning data into strategic decisions that matter.</p>
+          <p class="mb-3">I am a data and analytics professional with 2+ years of experience building ETL pipelines, BI
+            dashboards, and AI-powered automation across Databricks, Snowflake, Power BI, AWS, and Azure. I enjoy
+            transforming complex operational and transactional data into reliable reporting, faster decision-making, and
+            scalable data products.</p>
 
           <a href="https://www.linkedin.com/in/m-besh-vignesh-reddy/" class="btn btn-primary btn-sm mb-3">LinkedIn</a>
 
           <ul class="about-info mt-1 pl-0" style="list-style:none;">
-            <li class="d-flex"><span style="min-width:140px;">Cloud:</span> <span>AWS(EC2, S3, Redshift, Glue), Azure(Azure Data Factory, SQL DB)</span></li>
-            <li class="d-flex"><span style="min-width:140px;">Database:</span> <span>T-SQL, MongoDB, Redis &amp; Neo4j</span></li>
-            <li class="d-flex"><span style="min-width:140px;">Programming:</span> <span>Python, R &amp; JavaScript</span></li>
-            <li class="d-flex"><span style="min-width:140px;">BigData:</span> <span>Databricks, Spark, Kafka &amp; Snowflake</span></li>
-            <li class="d-flex"><span style="min-width:140px;">BI Tools:</span> <span>Power BI, Cognos Analytics</span></li>
-            <li class="d-flex"><span style="min-width:140px;">AI & Automation:</span> <span> AWS Bedrock, RAG Agents, Microsoft Power Automate, n8n</span></li>
-            <li class="d-flex"><span style="min-width:140px;">Tools &amp; Tech:</span> <span>AzureML Studio, Jupyter, Docker, Git, Linux</span></li>
-            <li class="d-flex"><span style="min-width:140px;">Other Skills:</span> <span>Microsoft Excel, JIRA, &amp; Agile Methodologies</span></li>
-            <li class="d-flex"><span style="min-width:140px;">Interest:</span> <span>Chess, Gym, Pickleball, Travel</span></li>
+            <li class="d-flex"><span style="min-width:170px;">Data Engineering:</span> <span>Python, SQL, PySpark,
+                Databricks, Airflow, ETL/ELT, Snowflake, Data Governance</span></li>
+            <li class="d-flex"><span style="min-width:170px;">Analytics:</span> <span>Power BI, Cognos, Excel,
+                Power Query, Pivot Tables</span></li>
+            <li class="d-flex"><span style="min-width:170px;">Cloud Platforms:</span> <span>Azure Data Factory, AWS
+                EC2, S3, Redshift, Glue</span></li>
+            <li class="d-flex"><span style="min-width:170px;">AI &amp; Automation:</span> <span>AWS Bedrock, LLMs,
+                Microsoft Power Automate, n8n</span></li>
+            <li class="d-flex"><span style="min-width:170px;">Tools:</span> <span>Jupyter, Git, Docker, NodeJS,
+                REST APIs, Microsoft Entra ID</span></li>
+            <li class="d-flex"><span style="min-width:170px;">Coursework:</span> <span>Big Data Processing, Applied
+                ML, Azure AI, Predictive Analytics</span></li>
+            <li class="d-flex"><span style="min-width:140px;">Interest:</span> <span>Chess, Gym, Pickleball,
+                Travel</span></li>
           </ul>
         </div>
       </div>
@@ -299,21 +593,29 @@
         <div class="skills-wrap" aria-label="Skills carousel">
           <div class="skills-track">
             <!-- Set A -->
-            <span class="skill-chip">Cloud<small>AWS(EC2, S3, Redshift, Glue) • Azure(Azure Data Factory, SQL DB)</small></span>
-            <span class="skill-chip">Database<small>T-SQL • MongoDB • Redis • Neo4j</small></span>
-            <span class="skill-chip">Programming<small>Python • R • JavaScript</small></span>
-            <span class="skill-chip">Data Engineering<small>Databricks • Spark • Kafka • Snowflake</small></span>
-            <span class="skill-chip">BI Tools<small>Power BI • Cognos</small></span>
-            <span class="skill-chip">Tools & Tech<small>Docker • Git • Linux • Jupyter</small></span>
-            <span class="skill-chip">Other Skills<small>Excel • JIRA • Agile</small></span>
+            <span class="skill-chip">Data Engineering<small>Python • SQL • PySpark • Databricks • Airflow •
+                Snowflake</small></span>
+            <span class="skill-chip">Analytics &amp; BI<small>Power BI • Cognos • Excel • Power Query • Pivot
+                Tables</small></span>
+            <span class="skill-chip">Cloud Platforms<small>Azure Data Factory • AWS EC2 • S3 • Redshift •
+                Glue</small></span>
+            <span class="skill-chip">AI &amp; Automation<small>AWS Bedrock • LLMs • Power Automate • n8n</small></span>
+            <span class="skill-chip">Tools<small>Jupyter • Git • Docker • NodeJS • REST APIs</small></span>
+            <span class="skill-chip">Data Practices<small>ETL/ELT • Data Governance • Data Integration</small></span>
+            <span class="skill-chip">Coursework<small>Big Data Processing • Applied ML • Azure AI • Predictive
+                Analytics</small></span>
             <!-- Set B duplicate for seamless loop -->
-            <span class="skill-chip">Cloud<small>AWS(EC2, S3, Redshift, Glue) • Azure(Azure Data Factory, SQL DB)</small></span>
-            <span class="skill-chip">Database<small>T-SQL • MongoDB • Redis • Neo4j</small></span>
-            <span class="skill-chip">Programming<small>Python • R • JavaScript</small></span>
- <span class="skill-chip">Data Engineering<small>Databricks • Spark • Kafka • Snowflake</small></span>
-            <span class="skill-chip">BI Tools<small>Power BI • Cognos</small></span>
-            <span class="skill-chip">Tools & Tech<small>Docker • Git • Linux • Jupyter</small></span>
-            <span class="skill-chip">Other Skills<small>Excel • JIRA • Agile</small></span>
+            <span class="skill-chip">Data Engineering<small>Python • SQL • PySpark • Databricks • Airflow •
+                Snowflake</small></span>
+            <span class="skill-chip">Analytics &amp; BI<small>Power BI • Cognos • Excel • Power Query • Pivot
+                Tables</small></span>
+            <span class="skill-chip">Cloud Platforms<small>Azure Data Factory • AWS EC2 • S3 • Redshift •
+                Glue</small></span>
+            <span class="skill-chip">AI &amp; Automation<small>AWS Bedrock • LLMs • Power Automate • n8n</small></span>
+            <span class="skill-chip">Tools<small>Jupyter • Git • Docker • NodeJS • REST APIs</small></span>
+            <span class="skill-chip">Data Practices<small>ETL/ELT • Data Governance • Data Integration</small></span>
+            <span class="skill-chip">Coursework<small>Big Data Processing • Applied ML • Azure AI • Predictive
+                Analytics</small></span>
           </div>
         </div>
       </div>
@@ -331,7 +633,8 @@
 
       <div class="row justify-content-center">
         <div class="col-md-10 text-center">
-          <p>Seasoned Software Developer with 2.5 years of industry experience, currently pursuing a Master's in Business Analytics and AI at the University of Texas at Dallas. Proven expertise in Data Engineering, Data Science, Analytics and Machine Learning.</p>
+          <p>Analytics engineer with 2.5+ years of experience across data engineering, BI, and AI automation, currently
+            pursuing an MS in Business Analytics and AI at The University of Texas at Dallas.</p>
         </div>
       </div>
 
@@ -348,13 +651,16 @@
             <span class="position">Hilton Grand Vacations</span>
             <p class="mt-3 mb-0">A leader in Timeshare industry</p>
             <ul class="mt-2 mb-0">
-              <li>Developed office-level performance dashboards for 20+ resort locations, automating budget validation and reconciliation,
+              <li>Developed office-level performance dashboards for 20+ resort locations, automating budget validation
+                and reconciliation,
                 ensuring to reduce budget variance to under 3.5% and improving financial accuracy.</li>
-              <li>Designed & deployed Power Automate workflows for budget approval pipelines, eliminating manual bottlenecks and
+              <li>Designed & deployed Power Automate workflows for budget approval pipelines, eliminating manual
+                bottlenecks and
                 cutting Cognos report delivery from 3+ weeks to 2–3 days, enabling real-time financial decisions.</li>
-                <li>Integrated an AI commentary layer using Databricks Mosaic AI in Power BI to automatically generate executive summaries
-from resort KPIs, saving 4–5 hours per reporting cycle.
-                </li>
+              <li>Integrated an AI commentary layer using Databricks Mosaic AI in Power BI to automatically generate
+                executive summaries
+                from resort KPIs, saving 4–5 hours per reporting cycle.
+              </li>
 
             </ul>
           </div>
@@ -366,11 +672,14 @@ from resort KPIs, saving 4–5 hours per reporting cycle.
             <h2>Analytics Engineer</h2>
             <span class="position">Jio Platforms Limited</span>
             <ul class="mt-3 mb-0">
-              <li>Processed 1.5M+ daily user engagement, subscription, and revenue transaction data using scalable PySpark ETL pipelines
+              <li>Processed 1.5M+ daily user engagement, subscription, and revenue transaction data using scalable
+                PySpark ETL pipelines
                 on Databricks Structured Streaming, enabling low-latency analytics for JioStream’s SaaS platform.</li>
-              <li>Built incremental data pipelines (Databricks to Snowflake) to generate ML feature tables, enabling rapid experimentation
+              <li>Built incremental data pipelines (Databricks to Snowflake) to generate ML feature tables, enabling
+                rapid experimentation
                 and retraining cycles that contributed to a 12% increase in user engagement.</li>
-              <li>Implemented data quality and validation checks using PySpark across Databricks pipelines and Playwright for Power BI
+              <li>Implemented data quality and validation checks using PySpark across Databricks pipelines and
+                Playwright for Power BI
                 dashboards reducing data quality issues by approx. 6%.</li>
             </ul>
           </div>
@@ -382,10 +691,13 @@ from resort KPIs, saving 4–5 hours per reporting cycle.
             <h2>Data Science Intern</h2>
             <span class="position">Exafluence</span>
             <ul class="mt-3 mb-0">
-              <li>Migrated and transformed 20M+ transactional records from relational databases to Neo4j, leveraging graph relationships to
+              <li>Migrated and transformed 20M+ transactional records from relational databases to Neo4j, leveraging
+                graph relationships to
                 enhance fraud detection while ensuring data governance and audit compliance.</li>
-              <li>Optimized graph query structures to accelerate risk scoring and anomaly detection workflows, integrating Python ML
-                models for real-time fraud prediction, improving detection accuracy by 5.8% while reducing false positives.</li>
+              <li>Optimized graph query structures to accelerate risk scoring and anomaly detection workflows,
+                integrating Python ML
+                models for real-time fraud prediction, improving detection accuracy by 5.8% while reducing false
+                positives.</li>
             </ul>
           </div>
         </div>
@@ -405,6 +717,7 @@ from resort KPIs, saving 4–5 hours per reporting cycle.
             <h2>Master's in Business Analytics and AI</h2>
             <span class="position">The University of Texas at Dallas</span>
             <p class="mt-3 mb-0">GPA: 3.9</p>
+            <p class="mb-0 text-muted">Coursework: Big Data Processing, Applied ML, Azure AI, Predictive Analytics</p>
           </div>
         </div>
         <div class="col-md-6">
@@ -419,7 +732,8 @@ from resort KPIs, saving 4–5 hours per reporting cycle.
 
       <div class="row justify-content-center mt-2">
         <div class="col-md-6 text-center">
-          <a href="https://drive.google.com/file/d/1R6g1qtDwg3G9vaW5O2YRPHjyT-BQeUgr/view?usp=sharing" class="btn btn-primary btn-lg">Download CV</a>
+          <a href="https://drive.google.com/file/d/1TgLjI8ZEqhpUpSEyx7wpBiIUrbziYFWV/view?usp=sharing"
+            class="btn btn-primary btn-lg">Download CV</a>
         </div>
       </div>
     </div>
@@ -437,15 +751,16 @@ from resort KPIs, saving 4–5 hours per reporting cycle.
       <div class="projects-wrap" aria-label="Projects carousel">
         <div class="projects-track">
           <!-- Set A -->
-		   <a class="project-card" href="https://github.com/MBeshVignesh/Wellnex-Architecture">
+          <a class="project-card" href="https://github.com/MBeshVignesh/Wellnex-Architecture">
             <span class="project-img" style="background-image:url('images/wellnex_image.png');"></span>
             <div class="project-body">
               <div class="heading">AI-Powered Digital Wellness Platform</div>
-              <p>Leveraged AWS to build a personalized, scalable, and secure platform with real-time analytics and AI-driven wellness insights.</p>
+              <p>Leveraged AWS to build a personalized, scalable, and secure platform with real-time analytics and
+                AI-driven wellness insights.</p>
             </div>
           </a>
-          
-		  <a class="project-card" href="https://github.com/MBeshVignesh/ASITEM-Architectural-Sketch-Image-To-3D-Model">
+
+          <a class="project-card" href="https://github.com/MBeshVignesh/ASITEM-Architectural-Sketch-Image-To-3D-Model">
             <span class="project-img" style="background-image:url('images/maxresdefault.jpg');"></span>
             <div class="project-body">
               <div class="heading">Architectural Sketch → 3D Model</div>
@@ -453,70 +768,111 @@ from resort KPIs, saving 4–5 hours per reporting cycle.
             </div>
           </a>
 
-		  <a class="project-card" href="https://yourpersonalai.streamlit.app">
-			<span class="project-img" style="background-image:url('images/AIAGENT.png');"></span>
-			<div class="project-body">
-			  <div class="heading">AI Agent Powered by Claude 4.5 Sonnet</div>
-			  <p>Built and deployed an AI agent using Claude 4.5 Sonnet on AWS Bedrock with LangChain for smart, fact-based career guidance.</p>
-			</div>
-
-          <a class="project-card" href="https://github.com/MBeshVignesh/Amazon_Review-Sentiment-Analysis">
-            <span class="project-img" style="background-image:url('images/Sentiment-Analysis-img.png');"></span>
+          <a class="project-card" href="https://github.com/MBeshVignesh/AI-Financial-Data-Validation-Engine">
+            <span class="project-img" style="background-image:url('images/DataValidationEngine.png');"></span>
             <div class="project-body">
-              <div class="heading">Amazon Review Sentiment Analysis</div>
-              <p>Surfaces likes/dislikes with NLP sentiment modeling.</p>
+              <div class="heading">AI Financial Data Validation Engine</div>
+              <p>AI-assisted validation workflow for financial datasets that helps flag anomalies, improve data quality,
+                and support more reliable reporting.</p>
             </div>
           </a>
 
-          <a class="project-card" href="https://github.com/MBeshVignesh/Covid-19-Data-Analysis">
-            <span class="project-img" style="background-image:url('images/covid19-img.png');"></span>
-            <div class="project-body">
-              <div class="heading">Covid-19 Data Analysis</div>
-              <p>Country-level trends in cases, recoveries, and fatalities.</p>
-            </div>
-          </a>
-
-          <!-- Duplicate Set B for seamless loop -->
-
-		 <a class="project-card" href="https://github.com/MBeshVignesh/Wellnex-Architecture">
-            <span class="project-img" style="background-image:url('images/wellnex_image.png');"></span>
-            <div class="project-body">
-              <div class="heading">AI-Powered Digital Wellness Platform</div>
-              <p>Leveraged AWS to build a personalized, scalable, and secure platform with real-time analytics and AI-driven wellness insights.</p>
-            </div>
-          </a>
-
-		  <a class="project-card" href="https://github.com/MBeshVignesh/ASITEM-Architectural-Sketch-Image-To-3D-Model">
-            <span class="project-img" style="background-image:url('images/maxresdefault.jpg');"></span>
-            <div class="project-body">
-              <div class="heading">Architectural Sketch → 3D Model</div>
-              <p>Reconstruct 3D geometry from sketches using deep learning.</p>
-            </div>
-          </a>
-
-		  <a class="project-card" href="https://yourpersonalai.streamlit.app">
+          <a class="project-card" href="https://yourpersonalai.streamlit.app">
             <span class="project-img" style="background-image:url('images/AIAGENT.png');"></span>
             <div class="project-body">
               <div class="heading">AI Agent Powered by Claude 4.5 Sonnet</div>
-              <p>Built and deployed an AI agent using Claude 4.5 Sonnet on AWS Bedrock with LangChain for smart, fact-based career guidance.</p>
+              <p>Built and deployed an AI agent using Claude 4.5 Sonnet on AWS Bedrock with LangChain for smart,
+                fact-based career guidance.</p>
             </div>
-          </a>
 
-          <a class="project-card" href="https://github.com/MBeshVignesh/Amazon_Review-Sentiment-Analysis">
-            <span class="project-img" style="background-image:url('images/Sentiment-Analysis-img.png');"></span>
-            <div class="project-body">
-              <div class="heading">Amazon Review Sentiment Analysis</div>
-              <p>Surfaces likes/dislikes with NLP sentiment modeling.</p>
-            </div>
-          </a>
+            <a class="project-card" href="https://github.com/MBeshVignesh/AI-Data-Analyst">
+              <span class="project-img" style="background-image:url('images/AI-Data-Analyst.png');"></span>
+              <div class="project-body">
+                <div class="heading">AI Data Analyst</div>
+                <p>Conversational analytics project designed to turn natural-language questions into data exploration,
+                  business insights, and faster analysis.</p>
+              </div>
+            </a>
 
-          <a class="project-card" href="https://github.com/MBeshVignesh/Covid-19-Data-Analysis">
-            <span class="project-img" style="background-image:url('images/covid19-img.png');"></span>
-            <div class="project-body">
-              <div class="heading">Covid-19 Data Analysis</div>
-              <p>Country-level trends in cases, recoveries, and fatalities.</p>
-            </div>
-          </a>
+            <a class="project-card" href="https://github.com/MBeshVignesh/Amazon_Review-Sentiment-Analysis">
+              <span class="project-img" style="background-image:url('images/Sentiment-Analysis-img.png');"></span>
+              <div class="project-body">
+                <div class="heading">Amazon Review Sentiment Analysis</div>
+                <p>Surfaces likes/dislikes with NLP sentiment modeling.</p>
+              </div>
+            </a>
+
+            <a class="project-card" href="https://github.com/MBeshVignesh/Covid-19-Data-Analysis">
+              <span class="project-img" style="background-image:url('images/covid19-img.png');"></span>
+              <div class="project-body">
+                <div class="heading">Covid-19 Data Analysis</div>
+                <p>Country-level trends in cases, recoveries, and fatalities.</p>
+              </div>
+            </a>
+
+            <!-- Duplicate Set B for seamless loop -->
+
+            <a class="project-card" href="https://github.com/MBeshVignesh/Wellnex-Architecture">
+              <span class="project-img" style="background-image:url('images/wellnex_image.png');"></span>
+              <div class="project-body">
+                <div class="heading">AI-Powered Digital Wellness Platform</div>
+                <p>Leveraged AWS to build a personalized, scalable, and secure platform with real-time analytics and
+                  AI-driven wellness insights.</p>
+              </div>
+            </a>
+
+            <a class="project-card"
+              href="https://github.com/MBeshVignesh/ASITEM-Architectural-Sketch-Image-To-3D-Model">
+              <span class="project-img" style="background-image:url('images/maxresdefault.jpg');"></span>
+              <div class="project-body">
+                <div class="heading">Architectural Sketch → 3D Model</div>
+                <p>Reconstruct 3D geometry from sketches using deep learning.</p>
+              </div>
+            </a>
+
+            <a class="project-card" href="https://github.com/MBeshVignesh/AI-Financial-Data-Validation-Engine">
+              <span class="project-img" style="background-image:url('images/DataValidationEngine.png');"></span>
+              <div class="project-body">
+                <div class="heading">AI Financial Data Validation Engine</div>
+                <p>AI-assisted validation workflow for financial datasets that helps flag anomalies, improve data
+                  quality,
+                  and support more reliable reporting.</p>
+              </div>
+            </a>
+
+            <a class="project-card" href="https://yourpersonalai.streamlit.app">
+              <span class="project-img" style="background-image:url('images/AIAGENT.png');"></span>
+              <div class="project-body">
+                <div class="heading">AI Agent Powered by Claude 4.5 Sonnet</div>
+                <p>Built and deployed an AI agent using Claude 4.5 Sonnet on AWS Bedrock with LangChain for smart,
+                  fact-based career guidance.</p>
+              </div>
+            </a>
+
+            <a class="project-card" href="https://github.com/MBeshVignesh/AI-Data-Analyst">
+              <span class="project-img" style="background-image:url('images/AI-Data-Analyst.png');"></span>
+              <div class="project-body">
+                <div class="heading">AI Data Analyst</div>
+                <p>Conversational analytics project designed to turn natural-language questions into data exploration,
+                  business insights, and faster analysis.</p>
+              </div>
+            </a>
+
+            <a class="project-card" href="https://github.com/MBeshVignesh/Amazon_Review-Sentiment-Analysis">
+              <span class="project-img" style="background-image:url('images/Sentiment-Analysis-img.png');"></span>
+              <div class="project-body">
+                <div class="heading">Amazon Review Sentiment Analysis</div>
+                <p>Surfaces likes/dislikes with NLP sentiment modeling.</p>
+              </div>
+            </a>
+
+            <a class="project-card" href="https://github.com/MBeshVignesh/Covid-19-Data-Analysis">
+              <span class="project-img" style="background-image:url('images/covid19-img.png');"></span>
+              <div class="project-body">
+                <div class="heading">Covid-19 Data Analysis</div>
+                <p>Country-level trends in cases, recoveries, and fatalities.</p>
+              </div>
+            </a>
         </div>
       </div>
       <!-- /Continuous rolling marquee -->
@@ -557,7 +913,57 @@ from resort KPIs, saving 4–5 hours per reporting cycle.
           <div class="align-self-stretch box text-center">
             <div>⬇️</div>
             <h3 class="mb-2">Download Resume</h3>
-            <p><a href="https://drive.google.com/file/d/1R6g1qtDwg3G9vaW5O2YRPHjyT-BQeUgr/view?usp=sharing">resumelink</a></p>
+            <p><a
+                href="https://drive.google.com/file/d/1TgLjI8ZEqhpUpSEyx7wpBiIUrbziYFWV/view?usp=sharing">resumelink</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="contact-form-card" id="contact-form">
+            <div class="row align-items-start">
+              <div class="col-lg-5 mb-4 mb-lg-0">
+                <h3>Send Me a Message</h3>
+                <p class="mb-3">Drop your name, email, and message here. I'll reach out ASAP.</p>
+              </div>
+
+              <div class="col-lg-7">
+                <div class="form-status" id="contact-success" role="status" aria-live="polite">
+                  Thanks for reaching out. Your message was submitted successfully.
+                </div>
+
+                <form class="contact-form" action="https://formsubmit.co/mbvignesh12@gmail.com" method="POST">
+                  <input type="hidden" name="_subject" value="New portfolio contact form submission">
+                  <input type="hidden" name="_template" value="table">
+                  <input type="hidden" name="_next" id="contact-next" value="">
+                  <input type="text" name="_honey" class="d-none" tabindex="-1" autocomplete="off">
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="contact-name">Name</label>
+                      <input type="text" class="form-control" id="contact-name" name="name" placeholder="Your name"
+                        required>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="contact-email">Email Address</label>
+                      <input type="email" class="form-control" id="contact-email" name="email"
+                        placeholder="you@email.com" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea class="form-control" id="contact-message" name="message"
+                      placeholder="Questions, Opportunities, collaborations, or anything else." required></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -576,12 +982,15 @@ from resort KPIs, saving 4–5 hours per reporting cycle.
   <!-- FOOTER -->
   <footer class="ftco-footer ftco-section">
     <div class="container">
-      <div class="row"><div class="col-md-12 text-center">
-        <p class="mb-0">
-          Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-          All rights reserved
-        </p>
-      </div></div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script>
+            All rights reserved
+          </p>
+        </div>
+      </div>
     </div>
   </footer>
 
@@ -592,11 +1001,29 @@ from resort KPIs, saving 4–5 hours per reporting cycle.
 
   <script>
     // Close mobile nav after clicking a link
-    $(function(){
-      $('.navbar-nav .nav-link').on('click', function(){
+    $(function () {
+      $('.navbar-nav .nav-link').on('click', function () {
         $('.navbar-collapse').collapse('hide');
       });
+
+      var baseUrl = window.location.href.split('#')[0].split('?')[0];
+      var nextInput = document.getElementById('contact-next');
+      if (nextInput) {
+        nextInput.value = baseUrl + '?contact=success#contact-form';
+      }
+
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('contact') === 'success') {
+        var successBanner = document.getElementById('contact-success');
+        if (successBanner) {
+          successBanner.classList.add('is-visible');
+        }
+        if (window.history.replaceState) {
+          window.history.replaceState({}, document.title, baseUrl + '#contact-form');
+        }
+      }
     });
   </script>
 </body>
+
 </html>
